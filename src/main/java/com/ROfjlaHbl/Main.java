@@ -1,18 +1,105 @@
 package com.ROfjlaHbl;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+class Fraction{
+    private int num;
+    private int den;
+    public  Fraction(){
+        int num = 0;
+        int den = 0;
+
+    }
+    public Fraction(int num, int den){
+        this.num = num;
+        this.den = den;
+    }
+    public int getNum(){
+        return num;
+    }
+    public int getDen(){
+        return den;
+    }
+    public boolean isInteger(){
+        if (den == 1){
+            return true;
+        }
+        else{return false;}
+    }
+    static{
+        Fraction example = new Fraction(1,2);
+        Fraction ex1 = new Fraction();
+        Fraction ex2 = new Fraction(1,2);
+        int numerator = example.getNum();
+        int denominator = example.getDen();
+    }
+}
 public class Main {
 
     public static void main(String[] args) {
-
-
+//будем резать этих телок
+    int den4ik=0;
+    int makson = 0;
+    int dima = 0;
         Scanner in = new Scanner(System.in);
-
         String str = "";
-
-        System.out.print("\n");
+        String str2 = "";
+        String str3 = "";
         str = in.next();
+        str2 = in.next();
+        str3 = in.next();
+        System.out.println(calculate(str,str2,str3));
+        ArrayList<Integer> numbers = new ArrayList<>();
+        int index2 = str.indexOf("/");
+        int index3 = str3.indexOf("/");
+        if(index2 == -1)
+        {
+            numbers.add(Integer.parseInt(str));
+        }
+        else
+        {
+            String[] parts12 = str.split("/");
+            int chis = Integer.parseInt(parts12[0]);
+            int znamxD = Integer.parseInt(parts12[1]);
+            numbers.add(chis);
+            numbers.add(znamxD);
+        }
+        if(index3 == -1)
+        {
+            numbers.add(Integer.parseInt(str3));
+        }
+        else
+        {
+            String[] parts121 = str3.split("/");
+            int chis1 = Integer.parseInt(parts121[0]);
+            int znamxD1 = Integer.parseInt(parts121[1]);
+            numbers.add(chis1);
+            numbers.add(znamxD1);
+        }
 
-
+        for (int i = 0; i < numbers.size(); i++) {
+            for (int j = i+1; j < numbers.size(); j++)
+            {
+                if(numbers.get(i)==numbers.get(j))
+                {
+                    den4ik++;
+                }
+                if(makson<den4ik)
+                {
+                    makson=den4ik;
+                    dima=numbers.get(i);
+                }
+                den4ik=0;
+            }
+        }
+        if(dima==0)
+        {
+            System.out.println("НЕТ одинаковых чисел");
+        }
+        else {
+            System.out.println(dima);
+        }
     }
 
     public static String calculate(String num1, String operation, String num2) {
@@ -98,7 +185,8 @@ public class Main {
                     return res2;
                 case "/":
                     if (chis_num1 == 0) {
-                        System.out.println("na 0 ne deli");
+                        res2="na 0 ne deli";
+                        return res2;
                     }
                     chis_result = chis_num * znam_num1;
                     znam_resuzlt = znam_num * chis_num1;
@@ -108,5 +196,7 @@ public class Main {
         }
         return null;
     }
+
 }
+
 
