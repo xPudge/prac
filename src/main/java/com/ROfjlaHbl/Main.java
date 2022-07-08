@@ -1,9 +1,118 @@
 package com.ROfjlaHbl;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
-class Fraction{
+import java.util.Random;
+import java.util.UUID;
+
+public class Main {
+
+    public static void main(String[] args) {
+//будем резать этих телок
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*class Fraction{
     private int num;
     private int den;
     public  Fraction(){
@@ -197,6 +306,6 @@ public class Main {
         return null;
     }
 
-}
+}*/
 
 
